@@ -22,6 +22,22 @@
           "*nodeseek.com",
         ],
       },
+      mapping: {
+        // anyrouter.top 是双线路 CNAME 分流：国内解析落到 bestcf（Cloudflare 优选），
+        // 该边缘没有它的证书（真实 SNI 报 handshake_failure），伪 SNI 又被 403。
+        // 改用境外 DoH 解析，拿到腾讯云 EdgeOne 那条线路，真实 SNI 直连即可。
+        "*anyrouter.top": "cf-DoH",
+      },
+    },
+
+    intercepts: {
+      // agentrouter.org（阿里云国际站 ALB，新加坡）：真实 SNI 被 RST，伪 SNI 能拿到真站内容
+      "*agentrouter.org": { ".*": { sni: "baidu.com" } },
+    },
+
+    preSetIpList: {
+      // 只钉 8.214.161.192：同组的 8.214.160.125 连伪 SNI 都不稳定
+      "*agentrouter.org": { "8.214.161.192": true },
     },
   },
 }

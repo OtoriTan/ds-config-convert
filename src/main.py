@@ -76,7 +76,17 @@ def apply_manual(merged: dict, manual: dict) -> int:
                 server.setdefault(sec, {}).setdefault(key, {}).update(val)
                 n += 1
 
-    mech = (mserver.get("dns") or {}).get("ech") or {}
+    mdns = mserver.get("dns") or {}
+
+    # mapping / familyMapping 是「域名 -> DNS 名 / IP 族」的字典，按键并入
+    for field in ("mapping", "familyMapping"):
+        table = mdns.get(field)
+        if not isinstance(table, dict) or not table:
+            continue
+        server.setdefault("dns", {}).setdefault(field, {}).update(table)
+        n += len(table)
+
+    mech = mdns.get("ech") or {}
     for field in ("domains", "preSetIpDomains"):
         extra = mech.get(field)
         if not isinstance(extra, list) or not extra:
