@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 dist/
+
+# 临时检查文件
+lc.json
+live_check.json
