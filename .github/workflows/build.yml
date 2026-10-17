@@ -4,6 +4,11 @@ on:
   schedule:
     # 每 8 小时。GitHub 的 cron 会排队延迟，不要当 SLA。
     - cron: "0 0/8 * * *"
+  push:
+    branches: [main]
+    # 回退产物由 CI 自己提交，排除掉避免自触发死循环
+    paths-ignore:
+      - "assets/**"
   workflow_dispatch:
 
 permissions:
