@@ -87,7 +87,7 @@ def main(argv=None):
             ap.error(f"未知来源: {n}（可选: {', '.join(SOURCES)}）")
 
     # 1. 官方配置作为基底
-    print(f"[1/6] 拉取官方配置: {SOURCES['official']}")
+    print(f"[1/6] 拉取官方配置: {SOURCES['official'][0]}")
     official = fetch_json5(SOURCES["official"])
 
     # 2. 转换各 Cealing 来源

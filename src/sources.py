@@ -18,12 +18,20 @@ def set_use_proxy(flag: bool):
 
 
 SOURCES = {
-    # 官方共享配置（dev-sidecar 客户端默认拉的就是这个）
-    "official": "https://ds-official-config.bestar.de5.net/remote_config.json5",
+    # 官方共享配置。bestar 镜像对境外 IP 返回 403（GitHub Actions 上必失败），
+    # 所以首选 GitHub 侧的官方协作仓库，bestar 只作国内环境的后备。
+    "official": [
+        "https://raw.githubusercontent.com/Blue-Frontier/dev-sidecar-config/main/remote_config.json5",
+        "https://ds-official-config.bestar.de5.net/remote_config.json5",
+    ],
     # Cealing-Host 主仓库
-    "cealing": "https://raw.githubusercontent.com/SpaceTimee/Cealing-Host/main/Cealing-Host.json",
+    "cealing": [
+        "https://raw.githubusercontent.com/SpaceTimee/Cealing-Host/main/Cealing-Host.json",
+    ],
     # Cealing 的多 IP 优选分支
-    "cealing-c15412": "https://raw.githubusercontent.com/c15412/Cealing-Host/main/Cealing-Host.json",
+    "cealing-c15412": [
+        "https://raw.githubusercontent.com/c15412/Cealing-Host/main/Cealing-Host.json",
+    ],
 }
 
 
@@ -38,22 +46,25 @@ def _candidates(url: str):
             yield f"https://cdn.jsdelivr.net/gh/{owner}/{repo}@{branch}/{path}"
 
 
-def fetch_text(url: str, timeout=(10, 30)) -> str:
+def fetch_text(urls, timeout=(10, 30)) -> str:
+    if isinstance(urls, str):
+        urls = [urls]
     errors = []
-    for u in _candidates(url):
-        try:
-            with requests.Session() as s:
-                s.trust_env = _USE_PROXY
-                r = s.get(u, timeout=timeout, headers={"User-Agent": UA})
-                r.raise_for_status()
-                return r.text
-        except Exception as e:  # noqa: BLE001
-            errors.append(f"{u} -> {type(e).__name__}: {str(e)[:80]}")
+    for url in urls:
+        for u in _candidates(url):
+            try:
+                with requests.Session() as s:
+                    s.trust_env = _USE_PROXY
+                    r = s.get(u, timeout=timeout, headers={"User-Agent": UA})
+                    r.raise_for_status()
+                    return r.text
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"{u} -> {type(e).__name__}: {str(e)[:80]}")
     raise RuntimeError("全部镜像均失败:\n  " + "\n  ".join(errors))
 
 
-def fetch_json5(url: str):
-    return json5.loads(fetch_text(url))
+def fetch_json5(urls):
+    return json5.loads(fetch_text(urls))
 
 
 def load_manual(path):
