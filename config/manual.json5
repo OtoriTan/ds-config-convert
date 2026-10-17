@@ -10,4 +10,18 @@
   //     "example.com": { "1.2.3.4": true },
   //   },
   // },
+
+  server: {
+    dns: {
+      ech: {
+        // 追加到官方 ech.domains（并集，不覆盖官方条目）
+        // idcflare.com 的 HTTPS 记录自带 ech 参数
+        // nodeseek.com 自身未发布 ECHConfig，靠 publicName（cloudflare-ech.com）的共享配置兜底
+        domains: [
+          "*idcflare.com",
+          "*nodeseek.com",
+        ],
+      },
+    },
+  },
 }

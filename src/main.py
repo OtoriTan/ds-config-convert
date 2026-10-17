@@ -60,6 +60,35 @@ def resolve_domain_targets(pre_set: dict, timeout=5.0):
     return resolved, failed
 
 
+def apply_manual(merged: dict, manual: dict) -> int:
+    """把手写规则并入最终配置，返回并入的条目数。
+
+    intercepts / preSetIpList 按键覆盖；dns.ech 的 domains / preSetIpDomains 是数组，
+    整体替换会把官方条目全部冲掉，所以按并集追加。
+    """
+    server = merged.setdefault("server", {})
+    mserver = manual.get("server") or {}
+    n = 0
+
+    for sec in ("intercepts", "preSetIpList"):
+        for key, val in (mserver.get(sec) or {}).items():
+            if isinstance(val, dict):
+                server.setdefault(sec, {}).setdefault(key, {}).update(val)
+                n += 1
+
+    mech = (mserver.get("dns") or {}).get("ech") or {}
+    for field in ("domains", "preSetIpDomains"):
+        extra = mech.get(field)
+        if not isinstance(extra, list) or not extra:
+            continue
+        target = server.setdefault("dns", {}).setdefault("ech", {}).setdefault(field, [])
+        added = [x for x in extra if x not in target]
+        target.extend(added)
+        n += len(added)
+
+    return n
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Cealing -> dev-sidecar 配置转换器")
     ap.add_argument("--out", default="dist/ds-config.json")
@@ -131,13 +160,7 @@ def main(argv=None):
     # 4.5 手写规则最后覆盖，优先级最高
     manual = load_manual(args.manual)
     if manual:
-        mserver = manual.get("server") or {}
-        n_manual = 0
-        for sec in ("intercepts", "preSetIpList"):
-            for key, val in (mserver.get(sec) or {}).items():
-                if isinstance(val, dict):
-                    merged["server"].setdefault(sec, {}).setdefault(key, {}).update(val)
-                    n_manual += 1
+        n_manual = apply_manual(merged, manual)
         print(f"      手写规则覆盖 {n_manual} 条")
 
     # 5. TLS 探测 —— 只删「服务端主动拒绝」的 IP
