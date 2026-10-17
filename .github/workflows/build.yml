@@ -61,13 +61,17 @@ jobs:
           PY
 
       - name: 刷新回退产物
-        # 每次成功都留一份，供下次构建失败时对照；同时给 60 天休眠计时器续命
+        # 每次成功都留一份，供下次构建失败时对照；同时给 60 天休眠计时器续命。
+        # continue-on-error：这一步失败不能挡住后面的 Pages 发布。
+        continue-on-error: true
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p assets
           cp dist/ds-config.json assets/last-good.json
           git add assets/last-good.json
           git diff --staged --quiet || git commit -m "chore: 刷新回退产物"
-          git push origin HEAD:${{ github.ref_name }} || echo "::warning::回退产物推送失败（不影响发布）"
+          git push origin HEAD:${{ github.ref_name }}
 
       - uses: actions/configure-pages@v5
 
