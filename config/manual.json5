@@ -1,6 +1,7 @@
 {
   // 手写补充规则，格式与 dev-sidecar 的 server 段一致。
   // 这里的条目优先级最高，会直接覆盖自动生成的结果。
+  // 最近一次维护：2026-10-17（ech 名单 / anyrouter 解析线路 / agentrouter SNI 改写）
   // 例：
   // server: {
   //   intercepts: {
