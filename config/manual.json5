@@ -1,0 +1,13 @@
+{
+  // 手写补充规则，格式与 dev-sidecar 的 server 段一致。
+  // 这里的条目优先级最高，会直接覆盖自动生成的结果。
+  // 例：
+  // server: {
+  //   intercepts: {
+  //     "example.com": { ".*": { sni: "baidu.com" } },
+  //   },
+  //   preSetIpList: {
+  //     "example.com": { "1.2.3.4": true },
+  //   },
+  // },
+}

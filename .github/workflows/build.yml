@@ -1,0 +1,79 @@
+name: build-config
+
+on:
+  schedule:
+    # 每 8 小时。GitHub 的 cron 会排队延迟，不要当 SLA。
+    - cron: "0 0/8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 提交回退产物
+  pages: write      # 部署 Pages
+  id-token: write   # deploy-pages 需要 OIDC
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  # 改成你自己的，必须全局唯一（会和官方 io.github.cute-omega 之类区分开）
+  META_ID: io.github.OtoriTan.dsconfig
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 匹配器一致性测试
+        # 与 dev-sidecar 自带的 util.match.test.js 用例对齐，防止移植走样
+        run: python tests/test_match.py
+
+      - name: 转换（含 TLS 探测）
+        run: python -m src.main --out dist/ds-config.json --meta-id "$META_ID"
+
+      - name: 产物自检
+        # 语法必须能解析；关键段落必须存在；规则数不能异常塌陷；不能有空 IP 集合。
+        run: |
+          python - <<'PY'
+          import json5, sys
+          d = json5.load(open('dist/ds-config.json', encoding='utf-8'))
+          s = d.get('server') or {}
+          itc, pre = s.get('intercepts') or {}, s.get('preSetIpList') or {}
+          print(f'intercepts={len(itc)}  preSetIpList={len(pre)}  version={d.get("metaInfo",{}).get("version")}')
+          if len(itc) < 50 or len(pre) < 50:
+              sys.exit('规则数量异常偏低，拒绝发布')
+          empty = [k for k, v in pre.items() if not v]
+          if empty:
+              sys.exit(f'存在空 IP 集合的键: {empty[:5]}')
+          PY
+
+      - name: 刷新回退产物
+        # 每次成功都留一份，供下次构建失败时对照；同时给 60 天休眠计时器续命
+        run: |
+          mkdir -p assets
+          cp dist/ds-config.json assets/last-good.json
+          git add assets/last-good.json
+          git diff --staged --quiet || git commit -m "chore: 刷新回退产物"
+          git push origin HEAD:${{ github.ref_name }} || echo "::warning::回退产物推送失败（不影响发布）"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
