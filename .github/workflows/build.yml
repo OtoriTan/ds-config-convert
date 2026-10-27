@@ -44,7 +44,9 @@ jobs:
 
       - name: 匹配器一致性测试
         # 与 dev-sidecar 自带的 util.match.test.js 用例对齐，防止移植走样
-        run: python tests/test_match.py
+        run: |
+          python tests/test_match.py
+          python tests/test_probe_plan.py
 
       - name: 转换（含 TLS 探测）
         run: python -m src.main --out dist/ds-config.json --meta-id "$META_ID"

@@ -18,6 +18,7 @@ import json5
 from . import cealing as cealing_mod
 from .merge import merge_configs
 from .probe import probe_all
+from .probe_plan import build_probe_targets, remove_rejected
 from .sources import SOURCES, fetch_json5, load_manual, set_use_proxy
 
 CN_TZ = timezone(timedelta(hours=8))
@@ -179,21 +180,14 @@ def main(argv=None):
         print("[5/6] TLS 探测（只删 TLS alert，超时保留）")
         itc = merged["server"].get("intercepts", {})
         pre = merged["server"].get("preSetIpList", {})
-        targets = []
-        for key in report["pre_added"]:
-            sni = ""
-            for opt in (itc.get(key) or {}).values():
-                if isinstance(opt, dict) and "sni" in opt:
-                    sni = opt["sni"]
-                    break
-            for ip in (pre.get(key) or {}):
-                targets.append((key, ip, sni))
-        print(f"      待探测 {len(targets)} 个 IP")
+        targets, removable, skipped = build_probe_targets(
+            report["pre_added"], itc, pre, merged["server"].get("dns", {})
+        )
+        print(f"      待探测 {len(targets)} 个 IP，"
+              f"无法确定参数而跳过 {len(skipped)} 条规则；"
+              f"通配规则仅供诊断，不据此删除 IP")
         results = probe_all(targets, timeout=args.timeout) if targets else {}
-        for (key, ip), res in results.items():
-            if res == "alert":
-                pre.get(key, {}).pop(ip, None)
-                removed.append((key, ip))
+        removed = remove_rejected(results, pre, removable)
         for key in list(pre):
             if not pre[key]:
                 pre.pop(key)
