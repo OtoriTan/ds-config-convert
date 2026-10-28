@@ -1,7 +1,7 @@
 {
   metaInfo: {
     updateLog: "基于 official,cealing 自动生成；新增 172 条规则，跳过 52 条官方已覆盖域名，删除 0 个服务端拒绝的 IP",
-    version: "202610280845",
+    version: "202610281648",
     id: "io.github.OtoriTan.dsconfig",
   },
   plugin: {
@@ -208,14 +208,14 @@
         "2a01:4f8:c2c:123f:64:5:36e6:4744": true,
       },
       "cdn-registry-1.docker.io": {
-        "100.60.235.201": true,
-        "34.204.126.254": true,
-        "34.202.26.219": true,
+        "100.30.151.116": true,
+        "174.129.192.32": true,
+        "184.194.166.98": true,
+        "184.197.226.54": true,
+        "44.223.235.148": true,
+        "107.20.191.71": true,
         "44.198.251.88": true,
-        "50.19.159.130": true,
-        "54.157.162.28": true,
-        "54.209.20.254": true,
-        "54.209.210.63": true,
+        "3.209.33.219": true,
       },
       "*.githubusercontent.com": {
         "185.199.108.133": true,
@@ -337,14 +337,14 @@
         "140.82.114.17": true,
       },
       "registry-1.docker.io": {
-        "100.60.235.201": true,
-        "34.204.126.254": true,
-        "34.202.26.219": true,
+        "100.30.151.116": true,
+        "174.129.192.32": true,
+        "184.194.166.98": true,
+        "184.197.226.54": true,
+        "44.223.235.148": true,
+        "107.20.191.71": true,
         "44.198.251.88": true,
-        "50.19.159.130": true,
-        "54.157.162.28": true,
-        "54.209.20.254": true,
-        "54.209.210.63": true,
+        "3.209.33.219": true,
       },
       "resources.github.com": {
         "185.199.108.133": true,
@@ -399,14 +399,14 @@
         "3.167.200.113": true,
       },
       "registry.docker.io": {
-        "100.60.235.201": true,
-        "34.204.126.254": true,
-        "34.202.26.219": true,
+        "100.30.151.116": true,
+        "174.129.192.32": true,
+        "184.194.166.98": true,
+        "184.197.226.54": true,
+        "44.223.235.148": true,
+        "107.20.191.71": true,
         "44.198.251.88": true,
-        "50.19.159.130": true,
-        "54.157.162.28": true,
-        "54.209.20.254": true,
-        "54.209.210.63": true,
+        "3.209.33.219": true,
       },
       "support.github.com": {
         "185.199.108.133": true,
@@ -424,9 +424,9 @@
         "3.167.200.113": true,
       },
       "consent.yahoo.com": {
-        "100.50.127.152": true,
-        "184.196.229.90": true,
-        "54.227.143.196": true,
+        "35.163.223.17": true,
+        "35.84.161.201": true,
+        "52.25.63.110": true,
       },
       "forum.f-droid.org": {
         "37.218.242.53": true,
@@ -564,14 +564,14 @@
         "4.237.22.38": true,
       },
       "index.docker.io": {
-        "100.60.235.201": true,
-        "34.204.126.254": true,
-        "34.202.26.219": true,
+        "100.30.151.116": true,
+        "174.129.192.32": true,
+        "184.194.166.98": true,
+        "184.197.226.54": true,
+        "44.223.235.148": true,
+        "107.20.191.71": true,
         "44.198.251.88": true,
-        "50.19.159.130": true,
-        "54.157.162.28": true,
-        "54.209.20.254": true,
-        "54.209.210.63": true,
+        "3.209.33.219": true,
       },
       "sp.nicovideo.jp": {
         "3.167.200.113": true,
@@ -634,9 +634,9 @@
         "185.70.42.69": true,
       },
       "guce.yahoo.com": {
-        "100.50.127.152": true,
-        "184.196.229.90": true,
-        "54.227.143.196": true,
+        "35.163.223.17": true,
+        "35.84.161.201": true,
+        "52.25.63.110": true,
       },
       "hub.docker.com": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
@@ -1002,7 +1002,7 @@
       },
     },
     intercepts: {
-      "^.*(youtube.com|gstatic.com|youtube.nocookie.com|youtu.be|ggpht.com|i.ytimg.com|blogger.com|doodles.google|about.google|android.com)$": {
+      "^.*(youtube.com|gstatic.com|youtube.nocookie.com|youtu.be|ggpht.com|i.ytimg.com|blogger.com|doodles.google|about.google|android.com|antigravity.google)$": {
         ".*": {
           sni: "www.google.cn",
         },
@@ -2860,8 +2860,8 @@
       url: "https://ds-official-config.bestar.de5.net/remote_config.json5",
     },
     metaInfo: {
-      updateLog: "新增ech对matrix.org、mod.io、itch.io、patreon.com和substack.com的支持",
-      version: 202610161530,
+      updateLog: "测试antigravity.google",
+      version: 202610281230,
       id: "official",
     },
   },
