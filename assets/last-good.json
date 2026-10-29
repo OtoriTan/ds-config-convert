@@ -1,7 +1,7 @@
 {
   metaInfo: {
-    updateLog: "基于 official,cealing 自动生成；新增 170 条规则，跳过 49 条官方已覆盖域名，删除 1 个服务端拒绝的 IP",
-    version: "202610290846",
+    updateLog: "基于 official,cealing 自动生成；新增 179 条规则，跳过 50 条官方已覆盖域名，删除 1 个服务端拒绝的 IP",
+    version: "202610291649",
     id: "io.github.OtoriTan.dsconfig",
   },
   plugin: {
@@ -205,14 +205,14 @@
         "2a01:4f8:c2c:123f:64:5:36e6:4744": true,
       },
       "cdn-registry-1.docker.io": {
-        "100.30.151.116": true,
-        "100.58.144.241": true,
-        "18.211.107.208": true,
+        "44.213.162.232": true,
+        "54.236.144.168": true,
+        "35.174.151.32": true,
         "44.208.14.248": true,
-        "54.157.163.39": true,
-        "23.23.191.49": true,
-        "3.209.33.219": true,
+        "98.95.191.109": true,
+        "3.234.124.14": true,
         "3.94.216.140": true,
+        "3.209.2.81": true,
       },
       "*.githubusercontent.com": {
         "185.199.108.133": true,
@@ -236,10 +236,10 @@
       "registry.hub.docker.com": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "*.youtube-nocookie.com": {
         "142.251.189.206": {
@@ -264,6 +264,9 @@
       },
       "kws5*.web.telegram.org": {
         "149.154.170.100": true,
+      },
+      "my.urbandictionary.com": {
+        "5.161.34.136": true,
       },
       "web-static.archive.org": {
         "207.241.237.2": true,
@@ -298,6 +301,10 @@
       "cdn5.cdn-telegram.org": {
         "34.111.108.175": true,
       },
+      "copilot.microsoft.com": {
+        "2603:1061:14:96::1": true,
+        "150.171.109.151": true,
+      },
       "docs-editor.proton.me": {
         "185.70.42.70": true,
       },
@@ -324,6 +331,9 @@
       "*archiveofourown.org": {
         "104.20.8.2": true,
       },
+      "*urbandictionary.com": {
+        "107.150.176.1": true,
+      },
       "account.nicovideo.jp": {
         "3.167.200.113": true,
       },
@@ -334,14 +344,14 @@
         "140.82.114.17": true,
       },
       "registry-1.docker.io": {
-        "100.30.151.116": true,
-        "100.58.144.241": true,
-        "18.211.107.208": true,
+        "44.213.162.232": true,
+        "54.236.144.168": true,
+        "35.174.151.32": true,
         "44.208.14.248": true,
-        "54.157.163.39": true,
-        "23.23.191.49": true,
-        "3.209.33.219": true,
+        "98.95.191.109": true,
+        "3.234.124.14": true,
         "3.94.216.140": true,
+        "3.209.2.81": true,
       },
       "resources.github.com": {
         "185.199.108.133": true,
@@ -362,6 +372,9 @@
       },
       "music.audiomack.com": {
         "3.167.200.113": true,
+      },
+      "public.api.bsky.app": {
+        "84.17.37.214": true,
       },
       "services.github.com": {
         "140.82.113.18": true,
@@ -396,14 +409,14 @@
         "3.167.200.113": true,
       },
       "registry.docker.io": {
-        "100.30.151.116": true,
-        "100.58.144.241": true,
-        "18.211.107.208": true,
+        "44.213.162.232": true,
+        "54.236.144.168": true,
+        "35.174.151.32": true,
         "44.208.14.248": true,
-        "54.157.163.39": true,
-        "23.23.191.49": true,
-        "3.209.33.219": true,
+        "98.95.191.109": true,
+        "3.234.124.14": true,
         "3.94.216.140": true,
+        "3.209.2.81": true,
       },
       "support.github.com": {
         "185.199.108.133": true,
@@ -480,10 +493,10 @@
       "notary.docker.io": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "open.spotify.com": {
         "2a01:4f8:c2c:123f:64:5:9765:c32a": true,
@@ -497,16 +510,19 @@
       "status.docker.io": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "tamtam-lp*.ok.ru": {
         "217.20.158.136": true,
       },
       "wallet.proton.me": {
         "194.0.147.12": true,
+      },
+      "web-cdn.bsky.app": {
+        "138.199.24.209": true,
       },
       "*.buy.yahoo.com": {
         "2a01:4f8:c2c:123f:64:5:2bd5:bab3": true,
@@ -561,17 +577,20 @@
         "4.237.22.38": true,
       },
       "index.docker.io": {
-        "100.30.151.116": true,
-        "100.58.144.241": true,
-        "18.211.107.208": true,
+        "44.213.162.232": true,
+        "54.236.144.168": true,
+        "35.174.151.32": true,
         "44.208.14.248": true,
-        "54.157.163.39": true,
-        "23.23.191.49": true,
-        "3.209.33.219": true,
+        "98.95.191.109": true,
+        "3.234.124.14": true,
         "3.94.216.140": true,
+        "3.209.2.81": true,
       },
       "sp.nicovideo.jp": {
         "3.167.200.113": true,
+      },
+      "status.bsky.app": {
+        "76.76.21.164": true,
       },
       "*apkmirror.com": {
         "104.17.67.215": true,
@@ -606,26 +625,26 @@
       "auth.docker.io": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "blog.docker.io": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "docs.docker.io": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "docs.proton.me": {
         "185.70.42.69": true,
@@ -638,10 +657,10 @@
       "hub.docker.com": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "lumo.proton.me": {
         "185.70.42.51": true,
@@ -721,10 +740,10 @@
       "get.docker.io": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "gql.twitch.tv": {
         "151.101.194.167": true,
@@ -735,10 +754,10 @@
       "www.docker.io": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "*archive.org": {
         "207.241.237.3": true,
@@ -790,6 +809,9 @@
       },
       "*xvideos.red": {
         "89.222.127.8": true,
+      },
+      "api.bsky.app": {
+        "108.179.136.10": true,
       },
       "*.claude.ai": {
         "2a01:4f8:c2c:123f:64:5:a04f:680a": true,
@@ -916,6 +938,12 @@
       "s.yimg.com": {
         "2a01:4f8:c2c:123f:64:5:b4de:6dfb": true,
       },
+      "*arena.ai": {
+        "2a01:4f8:c2c:123f:64:5:6812:ece": true,
+      },
+      "*bsky.app": {
+        "18.217.21.49": true,
+      },
       "*etsy.com": {
         "151.101.193.224": true,
       },
@@ -931,10 +959,10 @@
       "docker.io": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
         "2600:1f18:2148:bc00:eb39:1baf:a9b:8d58": true,
-        "2600:1f18:2148:bc02:8e44:7374:21f:7eda": true,
+        "2600:1f18:2148:bc02:dd71:3e03:179:5785": true,
         "32.193.181.249": true,
-        "34.197.141.94": true,
         "54.163.166.73": true,
+        "32.200.67.23": true,
       },
       "www.ok.ru": {
         "5.61.23.11": true,
@@ -943,14 +971,14 @@
         "146.75.36.81": true,
       },
       "*google*": {
-        "2607:f8b0:4001:c07::ca": true,
+        "2607:f8b0:4001:800::c8": true,
         "2607:f8b0:4001:c1c::c8": true,
         "2607:f8b0:4003:c1b::9c": true,
         "2607:f8b0:400d:c04::5a": true,
         "64.233.168.107": true,
         "66.102.1.117": true,
         "66.102.1.200": true,
-        "66.102.1.84": true,
+        "66.102.1.17": true,
       },
       "*mega.io": {
         "66.203.127.24": true,
@@ -1166,6 +1194,11 @@
           sni: "baidu.com",
         },
       },
+      "my.urbandictionary.com": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "zws1*.web.telegram.org": {
         ".*": {
           sni: "baidu.com",
@@ -1216,6 +1249,11 @@
           sni: "baidu.com",
         },
       },
+      "copilot.microsoft.com": {
+        ".*": {
+          sni: "copilot.microsoft.com",
+        },
+      },
       "docs-editor.proton.me": {
         ".*": {
           sni: "baidu.com",
@@ -1247,6 +1285,11 @@
         },
       },
       "*archiveofourown.org": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
+      "*urbandictionary.com": {
         ".*": {
           sni: "baidu.com",
         },
@@ -1336,6 +1379,11 @@
       "packages.elastic.co": {
         ".*": {
           proxy: "elastic.proxy.ustclug.org",
+        },
+      },
+      "public.api.bsky.app": {
+        ".*": {
+          sni: "baidu.com",
         },
       },
       "services.github.com": {
@@ -1567,6 +1615,11 @@
           sni: "baidu.com",
         },
       },
+      "web-cdn.bsky.app": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "*.buy.yahoo.com": {
         ".*": {
           sni: "buy.yahoo.com",
@@ -1635,6 +1688,11 @@
       "sp.nicovideo.jp": {
         ".*": {
           sni: "",
+        },
+      },
+      "status.bsky.app": {
+        ".*": {
+          sni: "baidu.com",
         },
       },
       "www.gstatic.com": {
@@ -1948,6 +2006,11 @@
           sni: "baidu.com",
         },
       },
+      "api.bsky.app": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "cn.vuejs.org": {
         ".*": {
           sni: "vuejs.org",
@@ -2139,6 +2202,16 @@
       "s.yimg.com": {
         ".*": {
           sni: "www.yahoo.com",
+        },
+      },
+      "*arena.ai": {
+        ".*": {
+          sni: "arena.ai",
+        },
+      },
+      "*bsky.app": {
+        ".*": {
+          sni: "baidu.com",
         },
       },
       "*etsy.com": {
