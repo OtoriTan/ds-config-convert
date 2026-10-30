@@ -1,7 +1,7 @@
 {
   metaInfo: {
-    updateLog: "基于 official,cealing 自动生成；新增 175 条规则，跳过 50 条官方已覆盖域名，删除 1 个服务端拒绝的 IP",
-    version: "202610300847",
+    updateLog: "基于 official,cealing 自动生成；新增 179 条规则，跳过 54 条官方已覆盖域名，删除 1 个服务端拒绝的 IP",
+    version: "202610301655",
     id: "io.github.OtoriTan.dsconfig",
   },
   plugin: {
@@ -206,13 +206,13 @@
       },
       "cdn-registry-1.docker.io": {
         "184.192.153.179": true,
-        "100.30.151.116": true,
         "184.196.27.215": true,
-        "54.236.144.168": true,
+        "100.31.14.190": true,
         "32.198.166.38": true,
-        "44.198.251.88": true,
-        "44.208.14.248": true,
-        "54.88.93.133": true,
+        "23.21.101.40": true,
+        "3.209.33.219": true,
+        "35.175.22.31": true,
+        "50.19.86.14": true,
       },
       "*.githubusercontent.com": {
         "185.199.108.133": true,
@@ -302,8 +302,8 @@
         "34.111.108.175": true,
       },
       "copilot.microsoft.com": {
-        "2603:1061:14:190::1": true,
-        "150.171.110.149": true,
+        "2603:1061:14:76::1": true,
+        "150.171.109.116": true,
       },
       "docs-editor.proton.me": {
         "185.70.42.70": true,
@@ -345,13 +345,13 @@
       },
       "registry-1.docker.io": {
         "184.192.153.179": true,
-        "100.30.151.116": true,
         "184.196.27.215": true,
-        "54.236.144.168": true,
+        "100.31.14.190": true,
         "32.198.166.38": true,
-        "44.198.251.88": true,
-        "44.208.14.248": true,
-        "54.88.93.133": true,
+        "23.21.101.40": true,
+        "3.209.33.219": true,
+        "35.175.22.31": true,
+        "50.19.86.14": true,
       },
       "resources.github.com": {
         "185.199.108.133": true,
@@ -374,7 +374,7 @@
         "3.167.200.113": true,
       },
       "public.api.bsky.app": {
-        "84.17.37.214": true,
+        "185.111.111.157": true,
       },
       "services.github.com": {
         "140.82.113.18": true,
@@ -407,13 +407,13 @@
       },
       "registry.docker.io": {
         "184.192.153.179": true,
-        "100.30.151.116": true,
         "184.196.27.215": true,
-        "54.236.144.168": true,
+        "100.31.14.190": true,
         "32.198.166.38": true,
-        "44.198.251.88": true,
-        "44.208.14.248": true,
-        "54.88.93.133": true,
+        "23.21.101.40": true,
+        "3.209.33.219": true,
+        "35.175.22.31": true,
+        "50.19.86.14": true,
       },
       "support.github.com": {
         "185.199.108.133": true,
@@ -431,9 +431,9 @@
         "3.167.200.113": true,
       },
       "consent.yahoo.com": {
-        "35.163.223.17": true,
-        "35.84.161.201": true,
-        "52.25.63.110": true,
+        "100.50.127.152": true,
+        "184.196.229.90": true,
+        "54.227.143.196": true,
       },
       "forum.f-droid.org": {
         "37.218.242.53": true,
@@ -564,6 +564,9 @@
       "drive.proton.me": {
         "185.70.42.40": true,
       },
+      "events.bsky.app": {
+        "77.112.174.236": true,
+      },
       "gist.github.com": {
         "20.205.243.166": true,
         "20.27.177.113": true,
@@ -572,13 +575,13 @@
       },
       "index.docker.io": {
         "184.192.153.179": true,
-        "100.30.151.116": true,
         "184.196.27.215": true,
-        "54.236.144.168": true,
+        "100.31.14.190": true,
         "32.198.166.38": true,
-        "44.198.251.88": true,
-        "44.208.14.248": true,
-        "54.88.93.133": true,
+        "23.21.101.40": true,
+        "3.209.33.219": true,
+        "35.175.22.31": true,
+        "50.19.86.14": true,
       },
       "sp.nicovideo.jp": {
         "3.167.200.113": true,
@@ -644,9 +647,9 @@
         "185.70.42.69": true,
       },
       "guce.yahoo.com": {
-        "35.163.223.17": true,
-        "35.84.161.201": true,
-        "52.25.63.110": true,
+        "100.50.127.152": true,
+        "184.196.229.90": true,
+        "54.227.143.196": true,
       },
       "hub.docker.com": {
         "2600:1f18:2148:bc01:8ace:b487:fcc3:4aa9": true,
@@ -670,6 +673,9 @@
       },
       "polymarket.com": {
         "64.239.109.1": true,
+      },
+      "video.bsky.app": {
+        "169.150.207.211": true,
       },
       "www.ecosia.org": {
         "2a01:4f8:c2c:123f:64:5:ac40:9647": true,
@@ -759,6 +765,9 @@
       "*bilibili.tv": {
         "2a01:4f8:c2c:123f:64:5:6797:9785": true,
       },
+      "*bsky.social": {
+        "52.203.70.156": true,
+      },
       "*discord.com": {
         "162.159.136.232": true,
       },
@@ -803,6 +812,9 @@
       },
       "api.bsky.app": {
         "108.179.136.10": true,
+      },
+      "cdn.bsky.app": {
+        "169.150.207.211": true,
       },
       "*.claude.ai": {
         "2a01:4f8:c2c:123f:64:5:a04f:680a": true,
@@ -961,7 +973,7 @@
       "*google*": {
         "2607:f8b0:4001:800::c8": true,
         "2607:f8b0:4001:c07::ca": true,
-        "2607:f8b0:4001:c18::5a": true,
+        "2607:f8b0:4001:c1c::c8": true,
         "2607:f8b0:400d:c04::5a": true,
         "64.233.168.107": true,
         "66.102.1.117": true,
@@ -1653,6 +1665,11 @@
           sni: "baidu.com",
         },
       },
+      "events.bsky.app": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "gist.github.com": {
         ".*": {
           sni: "baidu.com",
@@ -1781,6 +1798,11 @@
       "polymarket.com": {
         ".*": {
           sni: "vercel.com",
+        },
+      },
+      "video.bsky.app": {
+        ".*": {
+          sni: "baidu.com",
         },
       },
       "www.ecosia.org": {
@@ -1914,6 +1936,11 @@
           sni: "bilibili.tv",
         },
       },
+      "*bsky.social": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "*discord.com": {
         ".*": {
           sni: "baidu.com",
@@ -1969,6 +1996,11 @@
           sni: "baidu.com",
         },
       },
+      "*twitter.com": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "*xvideos.com": {
         ".*": {
           sni: "baidu.com",
@@ -1980,6 +2012,11 @@
         },
       },
       "api.bsky.app": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
+      "cdn.bsky.app": {
         ".*": {
           sni: "baidu.com",
         },
@@ -2125,6 +2162,11 @@
           sni: "baidu.com",
         },
       },
+      "*twimg.com": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "*twitch.tv": {
         ".*": {
           sni: "baidu.com",
@@ -2257,6 +2299,11 @@
           sni: "baidu.com",
         },
       },
+      "*.x.com": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "*rfi.fr": {
         ".*": {
           sni: "baidu.com",
@@ -2293,6 +2340,11 @@
         },
       },
       "ok.ru": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
+      "x.com": {
         ".*": {
           sni: "baidu.com",
         },
