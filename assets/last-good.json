@@ -1,7 +1,7 @@
 {
   metaInfo: {
     updateLog: "基于 official,cealing 自动生成；新增 179 条规则，跳过 54 条官方已覆盖域名，删除 1 个服务端拒绝的 IP",
-    version: "202611120902",
+    version: "202611121655",
     id: "io.github.OtoriTan.dsconfig",
   },
   plugin: {
@@ -148,18 +148,18 @@
       "^(?!.*\\.media\\.yahoo\\.com$).*\\.yahoo\\.com$": {
         "2a01:4f8:c2c:123f:64:5:b4de:6dfb": true,
       },
-      "community.cloudflare.steamstatic.com": {
-        "172.64.145.151": true,
-        "104.18.42.105": true,
-        "23.209.46.70": true,
-      },
-      "^(store|checkout).steampowered.com$": {
+      "^(store|checkout)\\.steampowered\\.com$": {
         "104.83.198.104": true,
         "184.31.230.122": true,
         "23.209.218.108": true,
         "23.35.102.114": true,
         "23.51.62.114": true,
         "23.55.98.103": true,
+      },
+      "community.cloudflare.steamstatic.com": {
+        "172.64.145.151": true,
+        "104.18.42.105": true,
+        "23.209.46.70": true,
       },
       "clientconfig.akamai.steamstatic.com": {
         " 23.208.12.191": true,
@@ -205,14 +205,14 @@
         "2a01:4f8:c2c:123f:64:5:36e6:4744": true,
       },
       "cdn-registry-1.docker.io": {
-        "32.194.125.153": true,
-        "44.210.194.216": true,
-        "98.87.236.114": true,
-        "98.94.168.235": true,
-        "3.232.125.55": true,
+        "184.193.170.199": true,
+        "100.29.105.237": true,
+        "100.58.136.26": true,
+        "3.218.197.120": true,
+        "3.229.236.193": true,
+        "32.192.131.92": true,
         "32.204.0.172": true,
-        "54.84.13.204": true,
-        "54.92.231.36": true,
+        "50.17.76.197": true,
       },
       "*.githubusercontent.com": {
         "185.199.108.133": true,
@@ -302,8 +302,8 @@
         "34.111.108.175": true,
       },
       "copilot.microsoft.com": {
-        "2603:1061:14:1c2::1": true,
-        "150.171.110.195": true,
+        "2603:1061:14:106::1": true,
+        "150.171.109.113": true,
       },
       "docs-editor.proton.me": {
         "185.70.42.70": true,
@@ -344,14 +344,14 @@
         "140.82.114.17": true,
       },
       "registry-1.docker.io": {
-        "32.194.125.153": true,
-        "44.210.194.216": true,
-        "98.87.236.114": true,
-        "98.94.168.235": true,
-        "3.232.125.55": true,
+        "184.193.170.199": true,
+        "100.29.105.237": true,
+        "100.58.136.26": true,
+        "3.218.197.120": true,
+        "3.229.236.193": true,
+        "32.192.131.92": true,
         "32.204.0.172": true,
-        "54.84.13.204": true,
-        "54.92.231.36": true,
+        "50.17.76.197": true,
       },
       "resources.github.com": {
         "185.199.108.133": true,
@@ -406,14 +406,14 @@
         "3.167.200.113": true,
       },
       "registry.docker.io": {
-        "32.194.125.153": true,
-        "44.210.194.216": true,
-        "98.87.236.114": true,
-        "98.94.168.235": true,
-        "3.232.125.55": true,
+        "184.193.170.199": true,
+        "100.29.105.237": true,
+        "100.58.136.26": true,
+        "3.218.197.120": true,
+        "3.229.236.193": true,
+        "32.192.131.92": true,
         "32.204.0.172": true,
-        "54.84.13.204": true,
-        "54.92.231.36": true,
+        "50.17.76.197": true,
       },
       "support.github.com": {
         "185.199.108.133": true,
@@ -574,14 +574,14 @@
         "4.237.22.38": true,
       },
       "index.docker.io": {
-        "32.194.125.153": true,
-        "44.210.194.216": true,
-        "98.87.236.114": true,
-        "98.94.168.235": true,
-        "3.232.125.55": true,
+        "184.193.170.199": true,
+        "100.29.105.237": true,
+        "100.58.136.26": true,
+        "3.218.197.120": true,
+        "3.229.236.193": true,
+        "32.192.131.92": true,
         "32.204.0.172": true,
-        "54.84.13.204": true,
-        "54.92.231.36": true,
+        "50.17.76.197": true,
       },
       "sp.nicovideo.jp": {
         "3.167.200.113": true,
@@ -1062,15 +1062,15 @@
           sni: "www.yahoo.com",
         },
       },
+      "^(store|checkout)\\.steampowered\\.com$": {
+        ".*": {
+          sni: "baidu.com",
+        },
+      },
       "^(?!.*cloudflare).*steamstatic.com$": {
         ".*": {
           unVerifySsl: true,
           desc: "steam社区数据不能也不需调整sni,直接直连",
-          sni: "baidu.com",
-        },
-      },
-      "^(store|checkout).steampowered.com$": {
-        ".*": {
           sni: "baidu.com",
         },
       },
@@ -2972,8 +2972,8 @@
       url: "https://ds-official-config.bestar.de5.net/remote_config.json5",
     },
     metaInfo: {
-      updateLog: "gist.github.com 补充 verifyHost：改写 SNI 后按 github.com 校验证书，修复 ERR_TLS_CERT_ALTNAME_INVALID",
-      version: 202611120035,
+      updateLog: "steampowered 规则转义点号（^(store|checkout)\\.steampowered\\.com$），避免匹配无关主机",
+      version: 202611121325,
       id: "official",
     },
   },
